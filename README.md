@@ -1,5 +1,4 @@
-# emotion_recognition_cnn
-
+# Speech Emotion Recognition with Convolution Neural Network
 #### *Author @rezachu*
 
 ## I. Introduction
