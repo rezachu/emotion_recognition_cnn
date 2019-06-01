@@ -6,15 +6,16 @@
 - This is a CNN Speech Emotion Recognition Model I found on [GitHub](https://github.com/MITESHPUTHRANNEU/Speech-Emotion-Analyzer). 
 - There is no paper to reference according to the repository author. 
 
-- Please run the notebook named: **CNN_emotion_recognition**
-
-
 ## II. Package Required
 
 Please refers to the requirement file.
 - Requirement File: [requirements.txt](/uploads/13620b71da276aad1d42a6e7608d3ffe/requirements.txt)
 
-## III. Preparation: Understanding the Data from Repo
+## III To Run
+- Please run the notebook named: **CNN_emotion_recognition.ipynb**
+
+
+## IV. Preparation: Understanding the Data from Repo
 
 Data Set: [The Ryerson Audio-Visual Database of Emotional Speech and Song (RAVDESS)](https://zenodo.org/record/1188976#.XN0fwnUzZhE)
 
@@ -42,51 +43,41 @@ Total Class:
 
 - Please Create a `./model/` folder and put all of the data inside.
 
-## IV.Preparation: Understanding the Model
+## V.Preparation: Understanding the Model
 
-**Default Architecture:**
+**Model Architecture:**
 
 ```
+# Model 
 model = Sequential()
-model.add(Conv1D(256, 5,padding='same', input_shape=(216,1)))
+model.add(Conv1D(256, 8, padding='same',input_shape=(X_train.shape[1],1))) #1
 model.add(Activation('relu'))
-model.add(Conv1D(128, 5,padding='same'))
+model.add(Conv1D(256, 8, padding='same')) #2
+model.add(BatchNormalization())
 model.add(Activation('relu'))
-model.add(Dropout(0.1))
+model.add(Dropout(0.25))
 model.add(MaxPooling1D(pool_size=(8)))
-model.add(Conv1D(128, 5,padding='same'))
+model.add(Conv1D(128, 8, padding='same')) #3
+model.add(Activation('relu')) 
+model.add(Conv1D(128, 8, padding='same')) #4
 model.add(Activation('relu'))
-#model.add(Conv1D(128, 5,padding='same'))
-#model.add(Activation('relu'))
-#model.add(Conv1D(128, 5,padding='same'))
-#model.add(Activation('relu'))
-#model.add(Dropout(0.2))
-model.add(Conv1D(128, 5,padding='same'))
+model.add(Conv1D(128, 8, padding='same')) #5
+model.add(Activation('relu'))
+model.add(Conv1D(128, 8, padding='same')) #6
+model.add(BatchNormalization())
+model.add(Activation('relu'))
+model.add(Dropout(0.25))
+model.add(MaxPooling1D(pool_size=(8)))
+model.add(Conv1D(64, 8, padding='same')) #7
+model.add(Activation('relu'))
+model.add(Conv1D(64, 8, padding='same')) #8
 model.add(Activation('relu'))
 model.add(Flatten())
-model.add(Dense(10))
+model.add(Dense(target_class)) #9
 model.add(Activation('softmax'))
-opt = keras.optimizers.rmsprop(lr=0.00001, decay=1e-6)
+opt = keras.optimizers.SGD(lr=0.0001, momentum=0.0, decay=0.0, nesterov=False)
 ```
 
-- Its reported performance is `Validation Acc : 72%` on 10 classes prediction. 
-- Model result cannot be replicated since the model weight provided cannot be loaded since the author updated the notebook and the model architecture does not match the model weight.
-- He did not isolate a test set, so the validation set is identical with his test set. There is a data leakage problem.
-- As a result, I have to re-sample the data to `Train, Valid and Test` sets and trained male and female model respectively. 
-
-
-## V. Key Findings
-
-
-## VI. Backlog
-- [(2 May Thur) Run Speech Emotion Recognition Model](#1)
-- [(3 May Fri) Experiment on the Speech Emotion Recognition Model](#5)
-- [(6 - 10 May ) Continue the experiment on speech emotion recognition](#7)
-- [(6- 10 May) Speech / Text Emotion Recognition PPT](#8)
-- [(14 May Tue) Further Training on SER model.](#14)
-- [(15 May Wed) Further Experiment on SER](#16)
-- [(16 May Thur) SER Data Labeling PPT](#18)
-- [(17 May Thur) SER Project Summary](#20)
-
-
+## VI. Project Summary
+- Please refers to my Blog on Medium: Speech Emotion Recognition with Convolution Neural Network
 
