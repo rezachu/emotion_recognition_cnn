@@ -6,28 +6,13 @@
 - This is a CNN Speech Emotion Recognition Model I found on [GitHub](https://github.com/MITESHPUTHRANNEU/Speech-Emotion-Analyzer). 
 - There is no paper to reference according to the repository author. 
 
+- Please run the notebook named: **CNN_emotion_recognition**
+
 
 ## II. Package Required
 
-```
-glob
-IPython
-keras
-librosa
-matplotlib
-numpy
-pandas
-plotly
-scipy
-seaborn
-sklearn
-tensorflow
-tqdm
-```
-
+Please refers to the requirement file.
 - Requirement File: [requirements.txt](/uploads/13620b71da276aad1d42a6e7608d3ffe/requirements.txt)
-
-- Please run the notebook named: **CNN_emotion_recognition**
 
 ## III. Preparation: Understanding the Data from Repo
 
@@ -53,9 +38,9 @@ Total Class:
 
 ### Sample Distribution:
 
-
 - Originally, there are 16 target classes (8 emotions and each emotion split to male and female.) in total for 1440 samples (Speech Only). The author removed the `disgust`, `surprised` and `neutral` from both gender which reduced the target classes to 10.
 
+- Please Create a `./model/` folder and put all of the data inside.
 
 ## IV.Preparation: Understanding the Model
 
