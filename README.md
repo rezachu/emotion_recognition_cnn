@@ -12,6 +12,8 @@ Please refers to the requirement file.
 
 ## III To Run
 - Please run the notebook named: **CNN_emotion_recognition.ipynb**
+- Please create a `./data/` folder and put all of the data inside.
+- Please create a `./model/` folder and set it as the model weight saving directory.
 
 
 ## IV. Preparation: Understanding the Data from Repo
@@ -40,7 +42,6 @@ Total Class:
 
 - Originally, there are 16 target classes (8 emotions and each emotion split to male and female.) in total for 1440 samples (Speech Only). The author removed the `disgust`, `surprised` and `neutral` from both gender which reduced the target classes to 10.
 
-- Please Create a `./model/` folder and put all of the data inside.
 
 ## V.Preparation: Understanding the Model
 
