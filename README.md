@@ -7,7 +7,7 @@
 
 ## II. Package Required
 
-- Please refers to the requirement file: [requirements.txt](/uploads/13620b71da276aad1d42a6e7608d3ffe/requirements.txt)
+- Please refers to the requirement file: [requirements.txt](./requirements.txt)
 
 ## III To Run
 - Please run the notebook named: **CNN_emotion_recognition.ipynb**
