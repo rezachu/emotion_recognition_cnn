@@ -9,11 +9,10 @@
 
 - Please refers to the requirement file: [requirements.txt](./requirements.txt)
 
-## III To Run
+## III. To Run
 - Please run the notebook named: **CNN_emotion_recognition.ipynb**
 - Please create a `./data/` folder and put all of the data inside.
 - Please create a `./model/` folder and set it as the model weight saving directory.
-
 
 ## IV. Preparation: Understanding the Data from Repo
 
