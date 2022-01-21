@@ -1,5 +1,5 @@
 glob2==0.6
-ipython==7.1.1
+ipython==7.16.3
 keras==2.2.2
 librosa==0.6.3
 matplotlib==3.0.2
