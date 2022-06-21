@@ -3,7 +3,7 @@ ipython==7.1.1
 keras==2.2.2
 librosa==0.6.3
 matplotlib==3.0.2
-numpy==1.15.4
+numpy==1.22.0
 pandas==0.23.4
 plotly==3.4.2
 scipy==1.1.0
